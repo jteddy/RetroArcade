@@ -72,29 +72,60 @@ You can find a guide on how to create a USB boot key and install Windows 10.
    C:\arcade\groovymame\mame64 -cc
    ```
 
-8. Download [CRTEmuDriver](https://geedorah.com/eiusdemmodi/forum/viewtopic.php?id=295).
+8. Edit mame.ini
+
+   ```
+   monitor                   CUSTOM
+   
+   cheat                     1
+   skip_gameinfo             1
+   
+   full_screen_gamma         0.7
+   ```
+
+   
+
+9. Download [CRTEmuDriver](https://geedorah.com/eiusdemmodi/forum/viewtopic.php?id=295).
 
    1. I have a Gigabyte gv-r6870c-1gd. This card has a DVI- port on Connector 4.
    2. [This table](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units) can be used to check if you have a GCN architecture card.
    3.  My 6870 I chose - [CRT Emudriver & CRT Tools 2.0 beta 15 (Crimson 16.2.1 non-GCN* cards) for Windows 7/8/10 64-bits](https://drive.google.com/file/d/1dwjXRFdySz4moxGTGcVWLdQDG-zw5-cJ/view)
 
-9. It is recommended to follow [Calamity's guide here](https://geedorah.com/eiusdemmodi/forum/viewtopic.php?pid=1052#p1052).
+10. It is recommended to follow [Calamity's guide here](https://geedorah.com/eiusdemmodi/forum/viewtopic.php?pid=1052#p1052).
 
-10. Extract CRT_emudriver
+11. Extract CRT_emudriver
 
-11. Rename the folder to make it simpler. I use "CRTEmuDriver"
+12. Rename the folder to make it simpler. I use "CRTEmuDriver"
 
-12. execute *CRTEmuDriver\setup.exe* 
+13. execute *CRTEmuDriver\setup.exe* 
 
-13. Read and accept the settings. Reboot your machine.
+14. Read and accept the settings. Reboot your machine.
 
-14. Upon reboot you will see *Test Mode*  in the lower right hand corner. You can now install the driver.
+15. Upon reboot you will see *Test Mode*  in the lower right hand corner. You can now install the driver.
 
-15. execute *CRTEmuDriver\setup.exe*. Install the driver
+16. execute *CRTEmuDriver\setup.exe*. Install the driver
 
-16. Restart windows
+17. Restart windows
 
-17. If I go to Advanced Display Settings, I can see that CRT Emudriver is being used
+18. If I go to Advanced Display Settings, I can see that CRT Emudriver is being used
 
-18. 
+19. Copy user_modes - super.ini and copy it as a new file - user_modes - super - retroarch.ini
 
+20. Add the below resolutions
+
+    ```
+    2560 x 192 @ 60.000000 retroarch
+    2560 x 200 @ 60.000000 retroarch
+    2560 x 240 @ 60.000000 retroarch
+    2560 x 224 @ 60.000000 retroarch
+    2560 x 237 @ 60.000000 retroarch
+    2560 x 256 @ 50.000000 retroarch
+    2560 x 254 @ 55.000000 retroarch
+    2560 x 448 @ 60.000000 retroarch
+    2560 x 480 @ 60.000000 retroarch
+    ```
+
+21. Execute vmmaker.exe as admin
+
+    1. Monitor Presets - Arcade 31.5 kHz - high resolution
+    2. 
