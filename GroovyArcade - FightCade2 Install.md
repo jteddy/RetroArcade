@@ -5,7 +5,7 @@ https://aur.archlinux.org/packages/fightcade2/
 Enable Multilib
 
 ```
-sudo hostnamectl set-hostname "GroovyArcade-AstroCity"
+sudo hostnamectl set-hostname "AstroCity"
 sudo vi /etc/pacman.conf
 ```
 
@@ -29,7 +29,7 @@ Install base-devel so you can build the FightCade package from AUR
 
 ```
 sudo pacman -S base-devel
-# Select options: 1 2 3 4 5 6 19 20 21
+# Select options: 1 2 3 4 5 6 10 17 19 20 21
 
 sudo pacman -S git wget unzip rsync
 ```
@@ -47,7 +47,17 @@ sudo pacman -U fightcade2-2.1.3-1-any.pkg.tar.zst
 Install required packages missed
 
 ```
-sudo pacman -S multilib/lib32-libxss multilib/lib32-libcurl-gnutls community/libcurl-gnutls extra/libzip community/wine-mono
+sudo pacman -S multilib/lib32-libxss multilib/lib32-libcurl-gnutls community/libcurl-gnutls extra/libzip community/wine-mono libgnutls
+```
+
+I had some errors with the Flycast Emulator for missing some dependencies. To help out with this I will install yay
+
+```
+sudo git clone https://aur.archlinux.org/yay.git
+sudo chown -R arcade:arcade yay
+makepkg -si
+yay --version
+yay -S aur/libcurl3-gnutls
 ```
 
 restart Wine
